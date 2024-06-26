@@ -85,3 +85,71 @@ if(condition){
 
 3. Looping : execute code repeatedly based off a condition , for loop , while loop , do while loop
 4. Jump statements : break , continue (loops) , return (functions)
+
+
+## Types of functions 
+
+1. Named Functions 
+2. Anonymous functions
+3. Arrow functions 
+4. IIFE
+5. Callback Functions
+6. In built methods (research on the different data type methods)
+
+
+## Scoping 
+In JS , a scope determines the visibility or accessibility of variables and function in different parts of a code script
+Affects how variables are looked up and what data is available in different contexts 
+
+## Types 
+1. Global Scope 
+2. Local/Function scope
+3. Block scope 
+4. Lexical Scope / Static Scope
+
+### Global Scope 
+These references variables declared outside any function or block 
+let x = 5 // has a global scope 
+
+{
+    block of code.
+}
+
+1. Accessible from anywhere inside the code 
+2. Can be modified from any place, (this may lead to unintended side effects)
+
+
+### Local Scope 
+Variables declared within functions. They can be used only inside that function
+
+1. Variables are confined to the function in which they are declared 
+2. Not accessible from outside the function 
+3. Each function call creates a new scope 
+
+### Block Scope 
+These defines variables declared within a block of code 
+
+1. Variables are accessible within the block of declaration 
+2. Prevents accidental modification of variables outside their intended context. 
+
+{
+    let definedvariable = "sth"
+    then defined variable is only accessible withing that scope!!!
+}
+
+### Lexical Scope (Static Scope)
+The scope of variables is determined by their physical location in the code during compilation phase. 
+NESTED FUNCTIONS : A function within a function 
+
+1. A functions scope includes the scope of the function or block where it was defined 
+2. Variables can be accessed from their defining context 
+
+
+## Scope Chain 
+when a variable is referenced in JavaScript , during compilation the JS engine look up the scope chain to find it. It starts from the current scope and moves outwards until it finds the variable or reaches the global scope
+
+## Hoisting 
+A JS mechanism where variables and function declarations are moved to the top of their containing scope during the compilation phase. Only the declarations are hoisted not the initilization
+
+let x;
+x = '5'
