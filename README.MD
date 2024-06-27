@@ -153,3 +153,72 @@ A JS mechanism where variables and function declarations are moved to the top of
 
 let x;
 x = '5'
+
+
+### Data types : 
+In JS there are two categories of data types 
+
+## Primitive data types 
+These types of data types are immutable and values cannot be changed once created , however you can reassign a new value to the variable holding the primitive type.
+
+- Numbers : integers and floating point numbers (1.0,)
+- String 
+- Boolean 
+- Undefined : when a variable is declared but not assigned a value 
+- Null : intentional absence 
+- Symbols 
+
+1. Immutability 
+2. Stored by value 
+3. Fixed size : occupy a fixed amount memory , therefore storage is in stacks 
+
+
+## Non-primitive data types 
+They are also known as reference types. 
+They hold multiple values or more complex entities
+
+- Objects : a collection of key and value pairs where keys are strings and the values can be of any data type 
+
+<!-- syntax of object -->
+let variablename = {
+    name : "Bob",
+    age : 20, 
+    address: {
+        location : hshdjhsd, 
+        postal_code: 4934834
+    }
+}
+
+- arrays : ordered collections of elements that can be of any type and are indexed by numbers 
+
+let colors  = ["red","green",true,20]
+
+- functions
+- maps 
+- sets
+- date 
+
+1. Mutability : the values can be changed or modified after creation 
+2. Stored by Reference : variables store references to the memory location where the data is actually held 
+3. Dynamic Size : they can grow or shrink in size , and their memory allocation is managed dynamically 
+
+### DATA STRUCTURES 
+DS are a way of organizing and storing data in computer systems to efficiently manage and manipulate the data 
+
+- arrays 
+- objects 
+
+
+### Loops
+Loops are used to execute a block of code repeatedly 
+{
+    block of code 
+}
+
+an initializer : is a variable that reference the current element in iteration/loop sequence
+
+1. for loop : used when we know in advance how many times we want to execute a block of code. 
+2. while loop : used to execute a block of code as long as a condition remains true
+3. do while loop : similar to the while loop , but it will execute the block of code before checking the condition
+4. for..in loop :  used to iterate over properties of an object 
+5. for ...of loop : used to loop over arrays. , forEach
