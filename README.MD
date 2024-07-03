@@ -222,3 +222,33 @@ an initializer : is a variable that reference the current element in iteration/l
 3. do while loop : similar to the while loop , but it will execute the block of code before checking the condition
 4. for..in loop :  used to iterate over properties of an object 
 5. for ...of loop : used to loop over arrays. , forEach
+
+
+### Phrase JAVASCRIPT FUNCTIONS ARE FIRST CLASS (CITIZENS)
+- functions in js are treated as first-class objects
+- functional programming : 
+- Object Oriented Programming : 
+
+document.addEventListener('click', function () {
+    validateEntries()
+    <!-- different functions -->
+    function validateEntries(){
+        <!-- code logic -->
+        submitFunction(name,email,institution)
+    }
+
+    <!-- submit -->
+    function submitFunction(name,email,institution){
+          <!-- code logic -->
+
+    }
+})
+
+
+- this is a fundamental concept to understanding JS functional programming capabilities and flexibilities in handling functions 
+
+1. Functions can be assigned to variables
+2. Functions can be passed as arguments (Callback functions) 
+3. Functions can be returned from other functions 
+4. Functions can be stored in data structures 
+5. Function have properties and methods. 

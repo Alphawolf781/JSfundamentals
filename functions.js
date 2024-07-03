@@ -87,3 +87,40 @@ function without_parameters(){
 
 
 //  generator functions 
+
+
+// functions can be returned from other functions 
+function createMultiplier(multiplier){
+    return function(num){
+        return num * multiplier
+    }
+}
+
+const double = createMultiplier(2)
+console.log(createMultiplier(2))
+console.log(double(5))
+
+function createGreeting(greeting){
+    // here we can have more logic 
+    return function(name){
+        return `${greeting}, ${name}!`
+    }
+}
+
+console.log(createGreeting('Good Morning'))
+const user_logged_in = createGreeting('Good Morning')
+console.log(user_logged_in)
+console.log(user_logged_in('Joseph'))
+
+
+function sayHello(){
+    console.log("Hello!")
+}
+
+sayHello.description =  "this function says hello"
+sayHello.newFunction = function (){
+    console.log('this is the function call')
+}
+console.log(sayHello())
+console.log(sayHello.description)
+console.log(sayHello.newFunction())
