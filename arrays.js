@@ -68,3 +68,10 @@ for(let x = 0; x < colors.length; x++){
 for(let x of colors){
     console.log(x)
 }
+
+
+// function to add two numnbers 
+//  1. validate the entries 
+//  2. Input tansforms to integer from string
+//  3. variable to save sum 
+//  4. use of arithmetic operator + 

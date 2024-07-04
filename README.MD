@@ -251,4 +251,5 @@ document.addEventListener('click', function () {
 2. Functions can be passed as arguments (Callback functions) 
 3. Functions can be returned from other functions 
 4. Functions can be stored in data structures 
-5. Function have properties and methods. 
+5. Function have properties and methods.
+6. Functions can be immediately invoked.  
