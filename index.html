@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Shopping List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px 0;
+    width: calc(100% - 22px);
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.purchased {
+    text-decoration: line-through;
+    background-color: #e0ffe0;
+}
+
+li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff5e5e;
+}
+
+li button:hover {
+    color: #ff0000;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping List</h1>
+        <input type="text" id="itemInput" placeholder="Add a new item">
+        <button id="addButton">Add</button>
+        <button id="clearButton">Clear List</button>
+        <ul id="shoppingList"></ul>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    const itemInput = document.getElementById('itemInput');
+    const addButton = document.getElementById('addButton');
+    const clearButton = document.getElementById('clearButton');
+    const shoppingList = document.getElementById('shoppingList');
+
+    // Load list from local storage if available
+    let items = JSON.parse(localStorage.getItem('shoppingList')) || [];
+
+    // Function to render the list
+    function renderList() {
+        shoppingList.innerHTML = ''; // Clear the list first
+        items.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item.name;
+
+            if (item.purchased) {
+                listItem.classList.add('purchased');
+            }
+
+            // Add mark as purchased button
+            const markButton = document.createElement('button');
+            markButton.textContent = '✔️';
+            markButton.addEventListener('click', () => {
+                items[index].purchased = !items[index].purchased;
+                saveToLocalStorage();
+                renderList();
+            });
+
+            // Add delete button
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '❌';
+            deleteButton.addEventListener('click', () => {
+                items.splice(index, 1);
+                saveToLocalStorage();
+                renderList();
+            });
+
+            listItem.appendChild(markButton);
+            listItem.appendChild(deleteButton);
+            shoppingList.appendChild(listItem);
+        });
+    }
+
+    // Save list to local storage
+    function saveToLocalStorage() {
+        localStorage.setItem('shoppingList', JSON.stringify(items));
+    }
+
+    // Add item to the list
+    addButton.addEventListener('click', () => {
+        const itemName = itemInput.value.trim();
+        if (itemName) {
+            items.push({ name: itemName, purchased: false });
+            itemInput.value = '';
+            saveToLocalStorage();
+            renderList();
+        }
+    });
+
+    // Add item to the list on pressing Enter key
+    itemInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            addButton.click();
+        }
+    });
+
+    // Clear the list
+    clearButton.addEventListener('click', () => {
+        items = [];
+        saveToLocalStorage();
+        renderList();
+    });
+
+    // Initial render
+    renderList();
+});
+
+    </script>
+</body>
+</html>

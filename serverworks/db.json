@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello World",
+      "content": "This is my first post!"
+    },
+    {
+      "id": "af71",
+      "title": "New Post ",
+      "content": "Joseph just did a new post "
+    },
+    {
+      "id": "6823",
+      "title": "another one",
+      "content": "post "
+    }
+  ],
+  "authors": [
+    {
+      "id": "1",
+      "name": "Joseph",
+      "description": "blah blah blah blah!!"
+    }
+  ]
+}
