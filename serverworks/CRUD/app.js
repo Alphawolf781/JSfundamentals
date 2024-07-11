@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const users = await response.json()
         console.log(users)
         // users is an array , so i use as an array
+        localStorage.setItem('users', JSON.stringify(users))
         userList.innerHTML = users.map(user => 
             `
             <li data-id="${user.id}">
