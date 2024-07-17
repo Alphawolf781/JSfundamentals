@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // add user
             const response = await fetch(URL)
             const users = await response.json()
+            // ternary operator
             const maxId = users.length > 0 ? Math.max(...users.map(user => user.id))  : 0;
             const newId = maxId  + 1 
 

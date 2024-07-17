@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Local Storage</title>
+    </head>
+    <body>
+        <input type="text" id="nameInput" placeholder="Enter your name"/>
+        <input type="email" id="emailInput" placeholder="Enter your email"/>
+        <button onclick="saveName()">Save</button>
+        <button onclick="loadName()">Load</button>
+        <button onclick="removeName()">Remove name</button>
+        <button onclick="clearStorage()">Clear all storage</button>
+        <script>
+            function saveName(){
+               const name = document.getElementById('nameInput').value 
+               const email = document.getElementById('emailInput').value
+            //    saving to local storage 
+               localStorage.setItem('name', name)
+               localStorage.setItem('email', email)
+               alert("Name saved")
+            }
+            function loadName(){
+                const name = localStorage.getItem('name')
+                if(name){
+                    alert("Stored name is " + name)
+                } else {
+                    alert('Name not found')
+                }
+            }
+            function removeName(){
+                localStorage.removeItem('name')
+                alert('removed name')
+            }
+            function clearStorage(){
+                localStorage.clear()
+                alert('Storage cleared')
+            }
+        </script>
+    </body>
+</html>

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('postForm')
     const postContainer = document.getElementById('postsContainer')
     const URL = 'http://localhost:3000/posts'
+ 
     // function to fetch and display posts (fetch API / promises)
     // by default fetch always performs a GET 
     //  to manage promises in fetch we use the .then() method 
